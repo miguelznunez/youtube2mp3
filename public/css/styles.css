@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.container{
+  width: 100%;
+  height: 40vh;
+  color: white;
+  background-color: red;
+  position: relative;
+  font-family: 'Orbitron', sans-serif;
+  font-style: italic;
+}
+
+.container-contents{
+  bottom: -10%;
+  position: absolute;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+}
+
+input{
+  width: 300px;
+  padding: 14px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border: 1px solid lightgray;
+  font-family: inherit;
+  outline: none;
+  box-shadow: 2px 2px 5px gray;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
+}
+
+input:focus{
+  box-shadow: 0 0 5px red;
+  border: 1px solid red;
+}
+
+button{
+  padding: 14px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 1px solid lightgray;
+  background-color: whitesmoke;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 2px 2px 5px gray;
+}
