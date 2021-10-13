@@ -1,18 +1,23 @@
 <%- include('partials/header.ejs') %>
 
   <div class="container">
-
-    <div class="container-contents">
-      <h1><i class="fab fa-youtube"></i> YouTube 2 MP3 Converter</h1>
-      <h4>Enter the video ID</h4>
-      <form action="/downloadSound">
-        <input type="text" name="videoId" id="videoId" placeholder="Video ID...">
-        <button type="submit">Download</button>
-        <span id="download-error"></span>
-      </form>
+    <div class="container-dimensions">
+      <div class="container-contents">
+        <div class="container-box">
+          <h1><i class="fab fa-youtube"></i> YouTube 2 MP3 Converter</h1>
+          <h4>Enter the video ID</h4>
+          <form id="contact-form">
+            <input type="text" id="videoId" placeholder="Video ID...">
+            <button id="submit-btn">Convert</button>
+          </form>
+          <div class="download-link-errors">
+            <p id="song-title"></p>
+            <a id="song-url"></a>
+            <span id="error"></span>
+          </div>
+        </div>
+      </div>
     </div>
-
   </div>
 
-
-<%- include('partials/footer.ejs') %>
+  <%- include('partials/footer.ejs') %>
