@@ -1,4 +1,4 @@
-Youtube video to MP3 converter
+YouTube video to MP3 converter
 
 1.) Go to https://rapidapi.com/ytjar/api/youtube-mp36 and get your free API key by choosing the freemium subscription plan
 
