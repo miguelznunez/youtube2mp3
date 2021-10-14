@@ -74,7 +74,7 @@ form{
   border: 1px solid red;
 }
 
-#submit-btn{
+#submit-btn, #download-song{
   padding: 14px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -86,7 +86,7 @@ form{
   transition: 0.3s ease-out;
 }
 
-#submit-btn:hover{
+#submit-btn:hover, #download-song:hover{
   color:white;
   background-color:  red;
   border: 1px solid  red;
