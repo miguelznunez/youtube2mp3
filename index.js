@@ -25,17 +25,17 @@ app.get("/", (req, res) => {
 });
 
 app.post("/downloadSound", async (req, res) => {
-  // Check if the video id is empty
+  // check if the video id field is empty
   if(
     req.body.videoId === undefined ||
     req.body.videoId === "" ||
     req.body.videoId === null
   ){
-  //return an error if its empty
+  //return an error if it is
     return res.json({ success :false, msg :"Please enter a video ID"});
   }
   else{
-    // if its not empty the api call
+    // otherwise make the API call
     const fetchAPI = await fetch(`https://youtube-mp36.p.rapidapi.com/dl?id=${req.body.videoId}`, {
     "method": "GET",
     "headers": {
@@ -47,25 +47,12 @@ app.post("/downloadSound", async (req, res) => {
     const fetchResponse = await fetchAPI.json();
     // check for errors
     if(fetchResponse.status === "ok")
-      return res.json({ success : true, msg : fetchResponse.link, title : fetchResponse.title}) 
+      return res.json({ success : true, msg : fetchResponse.link, title : fetchResponse.title})
     else
-      return res.json({ success : false, msg : "Please enter a valid ID"});
+      return res.json({ success : false, msg : fetchResponse.msg});
   }
 });
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
-
-// downloads to a folder
-    // https.get(fetchResponse.link, (res) => {
-    //   const path = "downloaded-image.mp3";
-    //   const writeStream = fs.createWriteStream(path);
-
-    //   res.pipe(writeStream);
-
-    //   writeStream.on("finish", () => {
-    //     writeStream.close();
-    //     console.log("Download Completed");
-    //   });
-    // });
