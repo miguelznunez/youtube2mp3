@@ -1,8 +1,6 @@
-// For dotenv
 if(process.env.NODE_ENV !== "production"){
   require("dotenv").config();
 }
-
 const express = require("express");
 const fetch = require("node-fetch");
 const https = require('https');
@@ -45,7 +43,6 @@ app.post("/downloadSound", async (req, res) => {
     });
 
     const fetchResponse = await fetchAPI.json();
-    console.log(fetchResponse);
     // check for errors
     if(fetchResponse.status === "ok")
       return res.json({ success : true, msg : fetchResponse.link, title : fetchResponse.title})
