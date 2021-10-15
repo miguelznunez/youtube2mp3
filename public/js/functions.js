@@ -23,8 +23,9 @@ document.querySelector("#contact-form").addEventListener("submit", (e) => {
       songTitle.textContent = data.title;
       // set the href to the url for the download
       songUrl.style.display= "block";
-      songUrl.href = data.msg;
-      songUrl.textContent = "DOWNLOAD MP3";
+      songUrl.addEventListener("click", () => {
+        window.open(`${data.msg}`, "_self");
+      })
       // clear the fields
       document.querySelector("#videoId").value = "";
       error.textContent = "";

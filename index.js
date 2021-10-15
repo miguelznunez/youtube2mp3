@@ -45,6 +45,7 @@ app.post("/downloadSound", async (req, res) => {
     });
 
     const fetchResponse = await fetchAPI.json();
+    console.log(fetchResponse);
     // check for errors
     if(fetchResponse.status === "ok")
       return res.json({ success : true, msg : fetchResponse.link, title : fetchResponse.title})

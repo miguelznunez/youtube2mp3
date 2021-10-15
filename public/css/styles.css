@@ -74,7 +74,7 @@ form{
   border: 1px solid red;
 }
 
-#submit-btn, #download-song{
+#submit-btn{
   padding: 14px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -86,7 +86,7 @@ form{
   transition: 0.3s ease-out;
 }
 
-#submit-btn:hover, #download-song:hover{
+#submit-btn:hover{
   color:white;
   background-color:  red;
   border: 1px solid  red;
@@ -124,7 +124,17 @@ form{
   font-style: normal;
   cursor: pointer;
   letter-spacing: 1px;
+  font-family: inherit;
+  border: 1px solid red;
+  transition: 0.3s ease-out;
   display: none;
+}
+
+#song-url:hover{
+  color:black;
+  background-color:  white;
+  border: 1px solid  lightgray;
+  transform: scale(1.1);
 }
 
 #error{
