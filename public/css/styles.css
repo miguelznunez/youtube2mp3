@@ -6,54 +6,40 @@
 }
 
 body{
-  overflow-x: hidden;
-}
-
-form{
-  display: flex;
-  justify-content: center;
-}
-
-.container{
-  width: 100%;
-  height: 40vh;
   color: white;
-  background-color: red;
-  position: relative;
+  overflow: hidden;
   font-family: 'Orbitron', sans-serif;
 }
 
-.container h1{
+.top-container{
+  height: 40vh;
+  background-color: red;
+}
+
+.bottom-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+#form{
+  width: 600px;
+  height: 40vh;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#form h1{
   font-style: italic;
   text-shadow: 1px 1px darkgray;
 }
 
-.container-dimensions{
-  width: 1280px;
-  height: 40vh;
-  margin: auto;
-}
-
-.container-contents{
-  width: 90%;
-  height: 100%;
-  margin: auto;
-  position: relative;
-}
-
-.container-box{
-  position: absolute;
-  bottom: -10%;
-
-  width: 100%;
-
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 20px;
-}
-
-#videoId{
+#form input{
   width: 300px;
   padding: 14px;
   border-top-left-radius: 15px;
@@ -62,19 +48,9 @@ form{
   font-family: inherit;
   outline: none;
   box-shadow: 2px 2px 5px gray;
-  -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  -o-transition: all 0.30s ease-in-out;
-  transition: all 0.30s ease-in-out;
 }
 
-#videoId:focus{
-  box-shadow: 0 0 5px red;
-  border: 1px solid red;
-}
-
-#submit-btn{
+#form button{
   padding: 14px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -86,55 +62,35 @@ form{
   transition: 0.3s ease-out;
 }
 
-#submit-btn:hover{
+#form button:hover{
   color:white;
   background-color:  red;
   border: 1px solid  red;
   transform: scale(1.1);
 }
 
-#submit-btn:active {
-  background-color: white;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-.download-link-errors{
-  width: 100%;
-  position: absolute;
-  bottom: -100px;
-  color: black;
+.errors{
+  width: 400px;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items:center;
   flex-direction: column;
   gap: 10px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-#song-url{
-  width: fit-content;
-  color: black;
-  padding: 16px;
-  color: white;
-  background-color: red;
   border-radius: 5px;
-  text-decoration: none;
-  box-shadow: 2px 2px 5px gray;
-  font-style: normal;
-  cursor: pointer;
-  letter-spacing: 1px;
-  font-family: inherit;
+  padding: 12px;
+  color: red;
+  background-color: #ffe6e6;
   border: 1px solid red;
-  transition: 0.3s ease-out;
-  display: none;
 }
 
-#song-url:hover{
-  color:black;
-  background-color:  white;
-  border: 1px solid  lightgray;
-  transform: scale(1.1);
+.success{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  color: black;
 }
 
 #error{
@@ -147,23 +103,44 @@ form{
   display: none;
 }
 
-@media(max-width:1280px){
-  .container-dimensions{
-    width: 100%;
-  }
+#download-btn{
+  width: fit-content;
+  color: black;
+  padding: 12px;
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 2px 2px 5px gray;
+  font-style: normal;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-family: inherit;
+  border: 1px solid red;
+  transition: 0.3s ease-out;
 }
+
+#download-btn:hover{
+  color:black;
+  background-color:  white;
+  border: 1px solid  lightgray;
+  transform: scale(1.1);
+}
+
 @media(max-width:768px){
-  .container-box{
-    width: 100%;
+  .bottom-container{
+    width: 90%;
+    margin: auto;
   }
 
-  input{
+  #form, .success{
+    text-align: center;
     width: 100%;
   }
 }
 
-@media(max-width: 480px){
-  .container-contents{
-    width: 95%;
+@media(max-width:480px){
+  #form input{
+    width: 50%;
   }
 }

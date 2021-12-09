@@ -1,23 +1,26 @@
 <%- include('partials/header.ejs') %>
 
-  <div class="container">
-    <div class="container-dimensions">
-      <div class="container-contents">
-        <div class="container-box">
-          <h1><i class="fab fa-youtube"></i> YouTube 2 MP3 Converter</h1>
-          <h4>Enter the video ID</h4>
-          <form id="contact-form">
-            <input type="text" id="videoId" placeholder="Video ID...">
-            <button id="submit-btn">Convert</button>
-          </form>
-          <div class="download-link-errors">
-            <p id="song-title"></p>
-            <button id="song-url">DOWNLOAD MP3</button>
-            <span id="error"></span>
-          </div>
-        </div>
-      </div>
+<div class="top-container">
+  <form action="/convert-mp3" method="POST" id="form">
+    <h1><i class="fab fa-youtube"></i> YouTube 2 MP3 Converter</h1>
+    <h4>Enter the video ID</h4>
+    <div>
+      <input type="text" name="videoId" placeholder="Video ID..."><button id="submit-btn">Convert</button>
     </div>
-  </div>
+  </form>
+</div>
 
-  <%- include('partials/footer.ejs') %>
+<div class="bottom-container">
+  <% if (typeof success != "undefined" && success) { %>
+    <div class="success">
+      <p> <%= song_title %> </p>
+      <a href="<%= song_link %>"><button id="download-btn">DOWNLOAD</button></a>
+    </div>
+  <% } else if (typeof success != "undefined" && !success) { %>
+    <div class="errors">
+      <p> <%= message %> </p>
+    </div>
+  <% } %>
+</div>
+
+<%- include('partials/footer.ejs') %>

@@ -2,9 +2,9 @@
   "name": "youtube2mp3",
   "version": "1.0.0",
   "description": "App that converts a  youtube video to mp3",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Miguel Nunez",
