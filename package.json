@@ -1,7 +1,7 @@
 {
   "name": "youtube2mp3",
   "version": "1.0.0",
-  "description": "App that converts a  youtube video to mp3",
+  "description": "App that converts a youtube video to mp3",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
