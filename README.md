@@ -1,4 +1,4 @@
-Before you can get this to work you must follow the two steps below.
+Before you can get this to work, you must follow the two steps below.
 
 1.) Go to https://rapidapi.com/ytjar/api/youtube-mp36 and get your free API key by choosing the freemium subscription plan.
 
