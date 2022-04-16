@@ -1,26 +1,41 @@
-<%- include('partials/header.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="top-container">
-  <form action="/convert-mp3" method="POST" id="form">
-    <h1><i class="fab fa-youtube"></i> YouTube 2 MP3 Converter</h1>
-    <h4>Enter the video ID</h4>
-    <div>
-      <input type="text" name="videoId" placeholder="Video ID..."><button id="submit-btn">Convert</button>
-    </div>
-  </form>
-</div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <link rel="shortcut icon" type="image/png" href="/img/yt.png" />
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>YouTube 2 MP3</title>
+</head>
 
-<div class="bottom-container">
-  <% if (typeof success != "undefined" && success) { %>
-    <div class="success">
-      <p> <%= song_title %> </p>
-      <a href="<%= song_link %>"><button id="download-btn">DOWNLOAD</button></a>
-    </div>
-  <% } else if (typeof success != "undefined" && !success) { %>
-    <div class="errors">
-      <p> <%= message %> </p>
-    </div>
-  <% } %>
-</div>
+<body>
 
-<%- include('partials/footer.ejs') %>
+  <div class="top-container">
+    <form action="/convert-mp3" method="POST" id="form">
+      <h1><i class="fab fa-youtube"></i> YouTube 2 MP3 Converter</h1>
+      <h4>Enter the video ID</h4>
+      <div>
+        <input type="text" name="videoId" placeholder="Video ID..."><button id="submit-btn">Convert</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="bottom-container">
+    <% if (typeof success != "undefined" && success) { %>
+      <div class="success">
+        <p> <%= song_title %> </p>
+        <a href="<%= song_link %>"><button id="download-btn">DOWNLOAD</button></a>
+      </div>
+    <% } else if (typeof success != "undefined" && !success) { %>
+      <div class="errors">
+        <p> <%= message %> </p>
+      </div>
+    <% } %>
+  </div>
+
+</body>
+
+</html>

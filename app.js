@@ -2,6 +2,8 @@
 const express = require("express");
 // npm install node-fetch@2
 const fetch = require("node-fetch");
+const request = require('request');
+
 require('dotenv').config()
 
 // Create express server
